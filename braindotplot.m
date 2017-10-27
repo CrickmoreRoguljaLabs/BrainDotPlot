@@ -6,22 +6,21 @@
 
 % Circle sizes
 maxsize = 30;
-minsize = 0.1;
+minsize = 0.05;
 
 % Grid size (0 = small, 1 = original size)
 grid_size = 0.05;
 
 % Threshold
 % [LMO, Isl, Lim1, Lim3, AP]
-threshold_vec = [30, 30, 30, 30, 30];
-
+threshold_vec = [87, 81, 30, 50, 114];
 %% Read and resize stacks
 % Read stacks
-LMO = stk(:,:,1);
-Isl = stk(:,:,2);
+Ap = stk(:,:,2);
 Lim1 = stk(:,:,4);
 Lim3 = stk(:,:,5);
-Ap = stk(:,:,3);
+Isl = stk(:,:,3);
+LMO = stk(:,:,1);
 
 % Resize stacks
 LMO_red = double(imresize(LMO,grid_size));
@@ -109,4 +108,4 @@ end
 hold off
 
 % Aspect ratio
-pbaspect([0.5 0.7 1])
+pbaspect([1 0.5 1])
